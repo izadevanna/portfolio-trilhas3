@@ -1,0 +1,232 @@
+
+/* Estilos Globais - Dark Theme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #090510 0%, #150a21 50%, #260a3c 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #f3f4f6;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    background: rgba(20, 12, 32, 0.75);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: 20px;
+    padding: 45px 25px 35px 25px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.15);
+}
+
+/* Cabeçalho de Perfil */
+.profile-pic {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #a855f7;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+h2 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #c084fc;
+    margin-bottom: 25px;
+}
+
+/* Gestão de Páginas */
+.page {
+    display: none;
+    position: relative;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botão Voltar para o Início com Imagem */
+.btn-back {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    padding: 0;
+    z-index: 10;
+}
+
+.btn-back:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+.back-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    /* Inverte a imagem preta para ficar branca e visível no fundo escuro */
+    filter: brightness(0) invert(1);
+}
+
+/* Botões da Página Inicial */
+.btn-menu {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin: 15px auto;
+    padding: 12px 20px;
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f3f4f6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-menu:hover {
+    background: rgba(168, 85, 247, 0.3);
+    border-color: #a855f7;
+    color: #ffffff;
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.35);
+}
+
+/* Redes Sociais apenas com Ícones */
+.socials {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.socials a:hover {
+    transform: scale(1.2);
+    opacity: 0.9;
+}
+
+.social-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    /* Inverte o ícone preto para ficar branco */
+    filter: brightness(0) invert(1);
+}
+
+/* Seção Sobre Mim */
+.about-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #e5e7eb;
+    max-width: 520px;
+    margin: 0 auto 25px auto;
+    text-align: center;
+}
+
+/* Grid de Projetos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: #a855f7;
+}
+
+.project-card .img-placeholder {
+    width: 100%;
+    height: 100px;
+    background-color: #1f1929;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(168, 85, 247, 0.1) 10px, rgba(168, 85, 247, 0.1) 20px);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    color: #c084fc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+    color: #e9d5ff;
+}
+
+/* Wrapper do PDF */
+.pdf-wrapper {
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.pdf-wrapper iframe {
+    border-radius: 10px;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 35px;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
